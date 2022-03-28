@@ -47,6 +47,15 @@ typedef struct
 		Status_t status;
 	} PCB_t; 
 
+/*segment struct represents a segment in the memory*/
+typedef struct segment {
+	unsigned startAddress; //Start adress of the segment
+	unsigned size; //Size of the segment, zero if its a headTail
+	pid_t pid; //the id of the process, zero if its a free segment or headTail
+	struct segment* next; //Pointer to the previous segment
+	struct segment* prev; //Pointer to the next segment
+} segment_t;
+
 
 
 
